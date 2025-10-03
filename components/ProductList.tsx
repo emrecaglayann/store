@@ -28,7 +28,7 @@ const ProductList = ({products, flatlist=true}: Props) => {
               }}
               keyExtractor={(item) => item.id.toString()} 
               renderItem={({ index,item }) => ( 
-                  <ProductItem item={item} index={index} productType="regular"/>
+                  <ProductItem item={item} index={index} productType="sale"/>
   
               )}
           />
