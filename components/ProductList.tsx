@@ -5,11 +5,12 @@ import ProductItem from './ProductItem'
 import { ProductType } from '@/types/type'
 
 type Props = {
-    products: ProductType[]
-    flatlist: boolean
+  products: ProductType[];
+  flatlist?: boolean;
+  productType: "sale" | "regular";
 };
 
-const ProductList = ({products, flatlist=true}: Props) => {
+const ProductList = ({products, flatlist=true, productType }: Props) => {
   return (
     <View style={styles.container}>
         <View style={styles.titleWrapper}>
@@ -28,7 +29,7 @@ const ProductList = ({products, flatlist=true}: Props) => {
               }}
               keyExtractor={(item) => item.id.toString()} 
               renderItem={({ index,item }) => ( 
-                  <ProductItem item={item} index={index} productType="sale"/>
+                  <ProductItem item={item} index={index} productType={productType}/>
   
               )}
           />
@@ -36,7 +37,7 @@ const ProductList = ({products, flatlist=true}: Props) => {
         <View style={styles.itemsWrapper} >
           {products.map((item,index) => (
             <View key={item.id} style={styles.productWrapper}>
-                <ProductItem item={item} index={index} productType="regular"/>
+                <ProductItem item={item} index={index} productType={productType}/>
             </View>
              ))}
         </View>

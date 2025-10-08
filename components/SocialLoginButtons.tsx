@@ -3,7 +3,7 @@ import React from 'react'
 import Animated, { FadeIn } from 'react-native-reanimated'
 import { Href, Link } from "expo-router"
 import { Ionicons } from '@expo/vector-icons'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Colors } from '@/constants/Colors'
 import Google from "../assets/images/google-logo.svg";
 
 type Props = {
@@ -27,7 +27,7 @@ const SocialLoginButtons = (props: Props) => {
                 <Animated.View entering={FadeIn.delay(700).duration(500)} >
                   <Link href={"/signin"} asChild>
                     <TouchableOpacity style={styles.button}>
-                      <Google width={20} height={20}/>
+                      <Ionicons name="logo-google" size={20} color={Colors.black} />
                       <Text style={styles.btnTxt}>Continue with Google</Text>
                     </TouchableOpacity>
                   </Link>

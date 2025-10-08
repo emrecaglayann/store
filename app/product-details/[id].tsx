@@ -22,13 +22,12 @@ const ProductDetails = (props: Props) => {
 
   const getProductDetails = async () => {
     const URL = 
-      productType === "sale" 
-        ? `http://10.0.2.2:8000/products/${id}`
-        : `http://10.0.2.2:8000/saleProducts/${id}`;
-    const response = await axios.get(URL);
+    productType === "sale" 
+      ? `http://10.0.2.2:8000/saleProducts/${id}`
+      : `http://10.0.2.2:8000/products/${id}`;
+    const response = await axios.get<ProductType>(URL);
 
-    
-    console.log("Product Details",response.data);
+    console.log("Product Details", response.data);
     setProduct(response.data);
   };
 

@@ -19,7 +19,7 @@ const ProductItem = ({ item, index, productType }: Props) => {
     <Link
       href={{
         pathname: "/product-details/[id]",
-        params: { id: String(item.id), productType }, // <-- burada "sale" veya "regular" props'tan geliyor
+        params: { id: String(item.id), productType },
       }}
       asChild
     >
