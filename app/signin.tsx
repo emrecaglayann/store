@@ -25,7 +25,7 @@ const SignInScreen = (props: Props) => {
       setLoading(true)
       await signInWithEmailAndPassword(auth, email.trim(), password)
       Alert.alert("Başarılı", "Giriş yapıldı!")
-      router.dismissAll()
+      // router.dismissAll()
       router.replace("/(tabs)")
     } catch (error: any) {
       console.log("Login Error:", error)

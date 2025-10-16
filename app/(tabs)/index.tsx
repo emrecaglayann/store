@@ -85,6 +85,8 @@ const HomeScreen = (props: Props) => {
     }
   }
 
+  
+
   if(isLoading) {
     return(
     <View>
@@ -108,9 +110,9 @@ const HomeScreen = (props: Props) => {
             style={{width: "100%" , height: 150, borderRadius: 15}}  
           />
         </View>  
-        <ProductList products={products} flatlist={false} />
+        <ProductList products={products} flatlist={false} productType={'regular'} />
       </ScrollView>
-    </>
+    </> 
   )
 } 
 
