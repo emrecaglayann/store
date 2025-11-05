@@ -2,7 +2,7 @@
   "expo": {
     "name": "store",
     "slug": "store",
-    "version": "1.0.0",
+    "version": "1.0.0", 
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -13,15 +13,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.caglayan.store"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
+      "package": "com.caglayan.store",
+
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "googleServicesFile": "./google-services.json",
-      "package": "com.caglayan.store"
+      }
+
     },
     "web": {
       "bundler": "metro",
@@ -30,17 +33,17 @@
     },
     "plugins": [
       "expo-router",
-      "@react-native-google-signin/google-signin",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.11033509319-9tnmq87cm6d48u89oas3d291che0ven9"    
+        }
+      ],
       "@react-native-firebase/app"
+
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "3188e447-d838-4091-ac45-6d02a2454447"
-      }
     }
   }
 }
