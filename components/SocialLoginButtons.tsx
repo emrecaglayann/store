@@ -1,42 +1,42 @@
 import { StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { Href, Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { auth } from '../FirebaseConfig';
-import * as WebBrowser from 'expo-web-browser';
-import * as Google from 'expo-auth-session/providers/google';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
-
-WebBrowser.maybeCompleteAuthSession();
 
 type Props = {
   emailHref: Href;
-  googleHref?: Href;
 };
 
 const SocialLoginButtons = ({ emailHref }: Props) => {
 
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId: '475995084407-0qkn22j2cf5gns5o466vtmsqu9kpjnsv.apps.googleusercontent.com',
-    webClientId: '475995084407-0qkn22j2cf5gns5o466vtmsqu9kpjnsv.apps.googleusercontent.com',
-  });
+  const handleGoogleLogin = async () => {
+    try {
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+      const userInfo = await GoogleSignin.signIn();
+      const tokens = await GoogleSignin.getTokens();
 
-  useEffect(() => {
-    if (response?.type === 'success') {
-      const { id_token } = response.params;
-      const credential = GoogleAuthProvider.credential(id_token);
-      signInWithCredential(auth, credential)
-        .then(() => {
-          Alert.alert('Başarılı 🎉', 'Google ile giriş yapıldı!');
-        })
-        .catch((error) => {
-          console.log('Google login error:', error);
-          Alert.alert('Giriş Hatası', error.message);
-        });
+      const credential = GoogleAuthProvider.credential(tokens.idToken);
+      await signInWithCredential(auth, credential);
+
+      Alert.alert('Başarılı 🎉', 'Google ile giriş yapıldı!');
+    } catch (error: any) {
+      console.log('Google Sign-In Hatası:', error);
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        Alert.alert('İptal Edildi', 'Giriş işlemi iptal edildi.');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        Alert.alert('Bekleyin', 'Giriş işlemi devam ediyor...');
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        Alert.alert('Hata', 'Google Play hizmetleri mevcut değil.');
+      } else {
+        Alert.alert('Giriş Hatası', error.message || 'Bilinmeyen hata');
+      }
     }
-  }, [response]);
+  };
 
   return (
     <View style={styles.socialLoginWrapper}>
@@ -50,11 +50,7 @@ const SocialLoginButtons = ({ emailHref }: Props) => {
       </Animated.View>
 
       <Animated.View entering={FadeIn.delay(700).duration(500)}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => promptAsync()} // 🔹 Google girişini başlat
-          disabled={!request}
-        >
+        <TouchableOpacity style={styles.button} onPress={handleGoogleLogin}>
           <Ionicons name="logo-google" size={20} color={Colors.black} />
           <Text style={styles.btnTxt}>Continue with Google</Text>
         </TouchableOpacity>

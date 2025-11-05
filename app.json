@@ -20,8 +20,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.store",
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "package": "com.caglayan.store"
     },
     "web": {
       "bundler": "metro",
@@ -30,10 +30,17 @@
     },
     "plugins": [
       "expo-router",
+      "@react-native-google-signin/google-signin",
       "@react-native-firebase/app"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "3188e447-d838-4091-ac45-6d02a2454447"
+      }
     }
   }
 }

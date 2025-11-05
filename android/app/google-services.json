@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "945663964097",
+    "project_id": "store-6b92c",
+    "storage_bucket": "store-6b92c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945663964097:android:c9fc1ed658cd096f8df540",
+        "android_client_info": {
+          "package_name": "com.caglayan.store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945663964097-gf0uobidl0qd2qgbon15f42rkcqd3oem.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.caglayan.store",
+            "certificate_hash": "4bf20f913f030a35966bd4effbc7f78c44c4602b"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOoR89E_Xu55TbDShFSGo0EXdTt8GZrnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945663964097-49lhkjhe514qdk7sg4kfofial0vai4m5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.caglayan.store"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
