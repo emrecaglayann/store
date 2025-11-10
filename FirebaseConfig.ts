@@ -8,7 +8,7 @@ import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAPx_0NqKeZJ13jdMS7pFQCNjEXMYLqheA",
+  apiKey: "AIzaSyAaN6t1Ritta4HSEsAEUeXJoVcD2la7x6E",
   authDomain: "store-6b92c.firebaseapp.com",
   projectId: "store-6b92c",
   storageBucket: "store-6b92c.firebasestorage.app",
