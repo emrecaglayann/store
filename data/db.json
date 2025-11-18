@@ -158,6 +158,129 @@
         "name": "Shoes",
         "image": "https://i.imgur.com/qNOjJje.jpeg"
       }
+    },
+    {
+      "id": "39",
+      "title": "Quality Diamond Stud Earrings",
+      "price": 29,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/mTrrCOZ.jpeg",
+        "https://i.imgur.com/PKo5bGK.jpeg",
+        "https://i.imgur.com/3olmT15.jpeg"
+      ],
+      "category": {
+        "id": 5,
+        "name": "Jewellery",
+        "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
+      }
+    },
+    {
+      "id": "40",
+      "title": "American Diamond Jewellery Set",
+      "price": 40,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/GiPAzRa.jpeg"
+      ],
+      "category": {
+        "id": 5,
+        "name": "Jewellery",
+        "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
+      }
+    },
+    {
+      "id": "41",
+      "title": "Blue Sapphire Ring",
+      "price": 55,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/DXbM6Te.jpeg",
+        "https://i.imgur.com/cIHEI60.jpeg",
+        "https://i.imgur.com/WBnkoLa.jpeg"
+      ],
+      "category": {
+        "id": 5,
+        "name": "Jewellery",
+        "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
+      }
+    },
+    {
+      "id": "42",
+      "title": "Green Diamond ",
+      "price": 75,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/1FX2Hqz.jpeg",
+        "https://i.imgur.com/57yM4nq.jpeg",
+        "https://i.imgur.com/NUqw6kj.jpeg"
+      ],
+      "category": {
+        "id": 5,
+        "name": "Jewellery",
+        "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
+      }
+    },
+    {
+      "id": "43",
+      "title": "2025 agave blue Enve Fray",
+      "price": 199,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/5Fb4aqt.jpeg"
+      ],
+      "category": {
+        "id": "6",
+        "name": "Miscellaneous",
+        "image": "https://i.imgur.com/BG8J0Fj.jpg"
+      }
+    },
+    {
+      "id": "44",
+      "title": "Forged Ring Dagger",
+      "price": 149,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/Sg9JmFb.jpeg",
+        "https://i.imgur.com/kgj5tAO.jpeg"
+      ],
+      "category": {
+        "id": "6",
+        "name": "Miscellaneous",
+        "image": "https://i.imgur.com/BG8J0Fj.jpg"
+      }
+    },
+    {
+      "id": "45",
+      "title": "1976 SA Keycaps",
+      "price": 99,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/GtCe2pH.jpeg",
+        "https://i.imgur.com/bKWXMy4.jpeg",
+        "https://i.imgur.com/yKz5yF5.jpeg"
+      ],
+      "category": {
+        "id": "6",
+        "name": "Miscellaneous",
+        "image": "https://i.imgur.com/BG8J0Fj.jpg"
+      }
+    },
+    {
+      "id": "46",
+      "title": "Husqvarna Nuda 900r ABS @ 2013",
+      "price": 1999,
+      "description": "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+      "images": [
+        "https://i.imgur.com/rWkGkoU.jpeg",
+        "https://i.imgur.com/kjjhsdJ.jpeg",
+        "https://i.imgur.com/yKz5yF5.jpeg"
+      ],
+      "category": {
+        "id": "6",
+        "name": "Miscellaneous",
+        "image": "https://i.imgur.com/BG8J0Fj.jpg"
+      }
     }
   ],
   "products": [
@@ -538,15 +661,6 @@
       "price": 35,
       "quantity": 2,
       "color": "#f44336",
-      "size": "M"
-    },
-    {
-      "id": "7",
-      "title": "Classic Comfort Drawstring Joggers",
-      "image": "https://i.imgur.com/mp3rUty.jpeg",
-      "price": 79,
-      "quantity": 1,
-      "color": "#2de",
       "size": "M"
     }
   ],

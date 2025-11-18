@@ -60,21 +60,6 @@ const ProfileScreen = (props: Props) => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
-            <Ionicons name="card-outline" size={20} color={Colors.black} />
-            <Text style={styles.buttonText}>Payment History</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Ionicons name="gift-outline" size={20} color={Colors.black} />
-            <Text style={styles.buttonText}>Rewards Points</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Ionicons name="person-outline" size={20} color={Colors.black} />
-            <Text style={styles.buttonText}>Customer Support</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
             <Ionicons name="pencil-outline" size={20} color={Colors.black} />
             <Text style={styles.buttonText}>Edit Profile</Text>
           </TouchableOpacity>

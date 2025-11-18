@@ -2,6 +2,8 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, FlatList } from 'react
 import React from 'react'
 import { CategoryType } from '@/types/type'
 import { Colors } from '@/constants/Colors'
+import { router } from 'expo-router'
+
 
 
 
@@ -25,7 +27,16 @@ const Categories = ({ categories }: Props) => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()} 
         renderItem={({item, index}) => (
-        <TouchableOpacity>
+        <TouchableOpacity  onPress={() =>
+              router.push({
+                pathname: "/category-products",
+                params: {
+                  id: String(item.id),
+                  name: item.name,
+                },
+              })
+            }
+          >
           <View style={styles.item}> 
               <Image source={{ uri: item.image }} style={styles.itemImg} />
               <Text>{item.name}</Text>

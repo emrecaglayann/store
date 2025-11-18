@@ -23,8 +23,23 @@ const ProductDetails = () => {
       productType === "sale"
         ? `http://10.0.2.2:8000/saleProducts/${id}`
         : `http://10.0.2.2:8000/products/${id}`;
-    const response = await axios.get<ProductType>(URL);
-    setProduct(response.data);
+    
+    try {
+      const response = await axios.get<ProductType>(URL);
+      const data = response.data;
+      setProduct(data);
+
+      // Ürün yüklendiğinde ilk seçenekleri otomatik seçelim
+      if (data.colors && data.colors.length > 0) {
+        setSelectedColor(data.colors[0]);
+      }
+      if (data.sizes && data.sizes.length > 0) {
+        setSelectedSize(data.sizes[0]);
+      }
+
+    } catch (error) {
+      console.log("Error fetching product:", error);
+    }
   };
 
   const handleAddToCart = async () => {
@@ -42,8 +57,8 @@ const ProductDetails = () => {
         image: product.images[0],
         price: product.price,
         quantity: 1,
-        color: selectedColor || "default",
-        size: selectedSize || "default",
+        color: selectedColor || "N/A", // Renk seçilmediyse veya yoksa
+        size: selectedSize || "N/A",   // Beden seçilmediyse veya yoksa
       };
 
       await axios.post(URL, cartItem);
@@ -88,13 +103,15 @@ const ProductDetails = () => {
 
               <Text style={styles.description}>{product.description}</Text>
 
-              {/* Color selection */}
               <View style={styles.productVariationWrapper}>
-                <View style={styles.productVariationType}>
-                  <Text style={styles.productVariationTitle}>Color</Text>
-                  <View style={styles.productVariationValueWrapper}>
-                    {["#D4AF37", "#333", "#8bc", "#2de", "#f44336", "#9c27b0"].map(
-                      (color) => (
+                
+                {/* --- DİNAMİK RENK SEÇİMİ --- */}
+                {/* Sadece colors dizisi varsa gösterir */}
+                {product.colors && product.colors.length > 0 && (
+                  <View style={styles.productVariationType}>
+                    <Text style={styles.productVariationTitle}>Color</Text>
+                    <View style={styles.productVariationValueWrapper}>
+                      {product.colors.map((color) => (
                         <TouchableOpacity
                           key={color}
                           onPress={() => setSelectedColor(color)}
@@ -104,50 +121,58 @@ const ProductDetails = () => {
                               backgroundColor: color,
                               borderWidth: selectedColor === color ? 2 : 0,
                               borderColor: Colors.primary,
+                              // Seçili değilse hafif bir kenarlık ekleyelim ki beyaz renkler görünsün
+                              shadowColor: "#000",
+                              elevation: selectedColor === color ? 5 : 2
                             },
                           ]}
                         />
-                      )
-                    )}
+                      ))}
+                    </View>
                   </View>
-                </View>
+                )}
 
-                {/* Size selection */}
-                <View style={styles.productVariationType}>
-                  <Text style={styles.productVariationTitle}>Size</Text>
-                  <View style={styles.productVariationValueWrapper}>
-                    {["S", "M", "L", "XL"].map((size) => (
-                      <TouchableOpacity
-                        key={size}
-                        onPress={() => setSelectedSize(size)}
-                        style={[
-                          styles.productVariationSizeValue,
-                          {
-                            borderColor:
-                              selectedSize === size
-                                ? Colors.primary
-                                : Colors.lightGray,
-                            borderWidth: selectedSize === size ? 2 : 1,
-                          },
-                        ]}
-                      >
-                        <Text
+                {/* --- DİNAMİK BEDEN SEÇİMİ --- */}
+                {/* Sadece sizes dizisi varsa gösterir (Electronics'te gizlenir) */}
+                {product.sizes && product.sizes.length > 0 && (
+                  <View style={styles.productVariationType}>
+                    <Text style={styles.productVariationTitle}>Size</Text>
+                    <View style={styles.productVariationValueWrapper}>
+                      {product.sizes.map((size) => (
+                        <TouchableOpacity
+                          key={size}
+                          onPress={() => setSelectedSize(size)}
                           style={[
-                            styles.productVariationSizeValueText,
+                            styles.productVariationSizeValue,
                             {
-                              color:
+                              borderColor:
                                 selectedSize === size
                                   ? Colors.primary
-                                  : Colors.black,
+                                  : Colors.lightGray,
+                              borderWidth: selectedSize === size ? 2 : 1,
+                              backgroundColor: selectedSize === size ? Colors.primary : Colors.extralightGray
                             },
                           ]}
                         >
-                          {size}
-                        </Text>
-                      </TouchableOpacity>
-                    ))}
+                          <Text
+                            style={[
+                              styles.productVariationSizeValueText,
+                              {
+                                color:
+                                  selectedSize === size
+                                    ? Colors.white // Seçiliyse yazı beyaz olsun
+                                    : Colors.black,
+                              },
+                            ]}
+                          >
+                            {size}
+                          </Text>
+                        </TouchableOpacity>
+                      ))}
+                    </View>
                   </View>
-                </View>
+                )}
+
               </View>
             </View>
           )}
@@ -214,6 +239,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: Colors.black,
   },
+  priceDiscount: {
+    // Stil eksikse buraya ekleme yapabilirsin, örnek:
+    backgroundColor: Colors.extralightGray,
+    padding: 5,
+    borderRadius: 5,
+  },
   priceDiscountText: {
     fontSize: 14,
     fontWeight: "400",
@@ -234,43 +265,41 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   productVariationWrapper: {
-    flexDirection: "row",
+    flexDirection: "column", // Yan yana değil alt alta dizilmesi daha sağlıklı
     marginTop: 20,
-    flexWrap: "wrap",
   },
   productVariationType: {
-    width: "50%",
+    width: "100%", // Tüm genişliği kaplasın
     gap: 5,
-    marginBottom: 10,
+    marginBottom: 15,
   },
   productVariationTitle: {
     fontSize: 16,
     fontWeight: "500",
     color: Colors.black,
+    marginBottom: 5,
   },
   productVariationValueWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 5,
+    gap: 10,
     flexWrap: "wrap",
   },
   productVariationColorValue: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    width: 35, // Biraz büyüttüm
+    height: 35,
+    borderRadius: 17.5,
   },
   productVariationSizeValue: {
     width: 50,
-    height: 30,
+    height: 35, // Yüksekliği biraz artırdım
     borderRadius: 5,
-    backgroundColor: Colors.extralightGray,
     justifyContent: "center",
     alignItems: "center",
   },
   productVariationSizeValueText: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: "500",
-    color: Colors.black,
   },
   buttonWrapper: {
     position: "absolute",
