@@ -1,7 +1,7 @@
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { Platform } from 'react-native';
 
 const CategoryProductsScreen = () => {
@@ -19,14 +19,30 @@ const CategoryProductsScreen = () => {
 
   const getProductsByCategory = async () => {
     try {
-      // products ve saleProducts verilerini çek
       const [prodRes, saleRes] = await Promise.all([
         axios.get(`${getBaseUrl()}/products`),
         axios.get(`${getBaseUrl()}/saleProducts`),
       ]);
 
+      // --- DÜZELTME BURADA BAŞLIYOR ---
+      
+      // Normal ürünlere 'normal' etiketi yapıştırıyoruz (veya boş bırakabilirsin)
+      const normalProducts = prodRes.data.map(item => ({
+        ...item,
+        sourceType: 'normal' 
+      }));
+
+      // Sale ürünlerine 'sale' etiketi yapıştırıyoruz.
+      // Bu 'sale' kelimesi Detay sayfasındaki "productType === 'sale'" kontrolü için kritik.
+      const saleProducts = saleRes.data.map(item => ({
+        ...item,
+        sourceType: 'sale'
+      }));
+
       // İki diziyi birleştir
-      const allProducts = [...prodRes.data, ...saleRes.data];
+      const allProducts = [...normalProducts, ...saleProducts];
+
+      // --- DÜZELTME BİTTİ ---
 
       // ID'ye göre filtrele
       const filtered = allProducts.filter(
@@ -52,16 +68,31 @@ const CategoryProductsScreen = () => {
           data={products}
           keyExtractor={(item, index) => item?.id?.toString() || index.toString()}
           renderItem={({ item }) => (
-            <View style={styles.productCard}>
-              <Image
-                source={{ uri: item?.images?.[0] || 'https://via.placeholder.com/150' }}
-                style={styles.image}
-              />
-              <Text style={styles.productTitle}>{item?.title || 'Ürün adı yok'}</Text>
-              <Text style={styles.price}>
-                {item?.price ? `$${item.price}` : 'Fiyat belirtilmemiş'}
-              </Text>
-            </View>
+            <TouchableOpacity
+              onPress={() =>
+                router.push({
+                  pathname: '/product-details/[id]',
+                  params: { 
+                    id: String(item.id), 
+                    name: item.title,
+                    // --- KRİTİK DÜZELTME ---
+                    // Detay sayfasına bu ürünün 'sale' mi yoksa 'normal' mi olduğunu söylüyoruz.
+                    productType: item.sourceType 
+                  },
+                })
+              }
+            >
+              <View style={styles.productCard}>
+                <Image
+                  source={{ uri: item?.images?.[0] || 'https://via.placeholder.com/150' }}
+                  style={styles.image}
+                />
+                <Text style={styles.productTitle}>{item?.title || 'Ürün adı yok'}</Text>
+                <Text style={styles.price}>
+                  {item?.price ? `$${item.price}` : 'Fiyat belirtilmemiş'}
+                </Text>
+              </View>
+            </TouchableOpacity>
           )}
         />
       )}
