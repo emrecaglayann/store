@@ -21,15 +21,14 @@ const ProductDetails = () => {
   const getProductDetails = async () => {
     const URL =
       productType === "sale"
-        ? `http://10.0.2.2:8000/saleProducts/${id}`
-        : `http://10.0.2.2:8000/products/${id}`;
+        ? `http://192.168.1.6:8000/saleProducts/${id}`
+        : `http://192.168.1.6:8000/products/${id}`;
     
     try {
       const response = await axios.get<ProductType>(URL);
       const data = response.data;
       setProduct(data);
-
-      // Ürün yüklendiğinde ilk seçenekleri otomatik seçelim
+      
       if (data.colors && data.colors.length > 0) {
         setSelectedColor(data.colors[0]);
       }
@@ -48,7 +47,7 @@ const ProductDetails = () => {
     try {
       const URL =
         Platform.OS === "android"
-          ? "http://10.0.2.2:8000/cart"
+          ? "http://192.168.1.6:8000/cart"
           : "http://localhost:8000/cart";
 
       const cartItem = {
@@ -57,8 +56,8 @@ const ProductDetails = () => {
         image: product.images[0],
         price: product.price,
         quantity: 1,
-        color: selectedColor || "N/A", // Renk seçilmediyse veya yoksa
-        size: selectedSize || "N/A",   // Beden seçilmediyse veya yoksa
+        color: selectedColor || "N/A", 
+        size: selectedSize || "N/A",   
       };
 
       await axios.post(URL, cartItem);
@@ -104,9 +103,6 @@ const ProductDetails = () => {
               <Text style={styles.description}>{product.description}</Text>
 
               <View style={styles.productVariationWrapper}>
-                
-                {/* --- DİNAMİK RENK SEÇİMİ --- */}
-                {/* Sadece colors dizisi varsa gösterir */}
                 {product.colors && product.colors.length > 0 && (
                   <View style={styles.productVariationType}>
                     <Text style={styles.productVariationTitle}>Color</Text>
@@ -121,7 +117,6 @@ const ProductDetails = () => {
                               backgroundColor: color,
                               borderWidth: selectedColor === color ? 2 : 0,
                               borderColor: Colors.primary,
-                              // Seçili değilse hafif bir kenarlık ekleyelim ki beyaz renkler görünsün
                               shadowColor: "#000",
                               elevation: selectedColor === color ? 5 : 2
                             },
@@ -132,8 +127,6 @@ const ProductDetails = () => {
                   </View>
                 )}
 
-                {/* --- DİNAMİK BEDEN SEÇİMİ --- */}
-                {/* Sadece sizes dizisi varsa gösterir (Electronics'te gizlenir) */}
                 {product.sizes && product.sizes.length > 0 && (
                   <View style={styles.productVariationType}>
                     <Text style={styles.productVariationTitle}>Size</Text>
@@ -160,7 +153,7 @@ const ProductDetails = () => {
                               {
                                 color:
                                   selectedSize === size
-                                    ? Colors.white // Seçiliyse yazı beyaz olsun
+                                    ? Colors.white 
                                     : Colors.black,
                               },
                             ]}
@@ -179,7 +172,7 @@ const ProductDetails = () => {
         </View>
       </ScrollView>
 
-      {/* Buttons */}
+
       <View style={styles.buttonWrapper}>
         <TouchableOpacity
           style={[
@@ -240,7 +233,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
   },
   priceDiscount: {
-    // Stil eksikse buraya ekleme yapabilirsin, örnek:
+
     backgroundColor: Colors.extralightGray,
     padding: 5,
     borderRadius: 5,
@@ -265,11 +258,11 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   productVariationWrapper: {
-    flexDirection: "column", // Yan yana değil alt alta dizilmesi daha sağlıklı
+    flexDirection: "column", 
     marginTop: 20,
   },
   productVariationType: {
-    width: "100%", // Tüm genişliği kaplasın
+    width: "100%", 
     gap: 5,
     marginBottom: 15,
   },
@@ -286,13 +279,13 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   productVariationColorValue: {
-    width: 35, // Biraz büyüttüm
+    width: 35, 
     height: 35,
     borderRadius: 17.5,
   },
   productVariationSizeValue: {
     width: 50,
-    height: 35, // Yüksekliği biraz artırdım
+    height: 35, 
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",

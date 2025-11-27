@@ -15,7 +15,11 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#8B4513", "#D2691E", "#F5DEB3"]
+      "colors": [
+        "#8B4513",
+        "#D2691E",
+        "#F5DEB3"
+      ]
     },
     {
       "id": "30",
@@ -32,7 +36,10 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#FFD700", "#C0C0C0"]
+      "colors": [
+        "#FFD700",
+        "#C0C0C0"
+      ]
     },
     {
       "id": "31",
@@ -49,7 +56,11 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#008080", "#808080", "#000000"]
+      "colors": [
+        "#008080",
+        "#808080",
+        "#000000"
+      ]
     },
     {
       "id": "32",
@@ -66,7 +77,10 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#A0522D", "#DEB887"]
+      "colors": [
+        "#A0522D",
+        "#DEB887"
+      ]
     },
     {
       "id": "33",
@@ -83,7 +97,10 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#FFFFFF", "#000000"]
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ]
     },
     {
       "id": "34",
@@ -99,7 +116,10 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#000000", "#808080"]
+      "colors": [
+        "#000000",
+        "#808080"
+      ]
     },
     {
       "id": "35",
@@ -116,8 +136,17 @@
         "name": "Shoes",
         "image": "https://i.imgur.com/qNOjJje.jpeg"
       },
-      "colors": ["#C0C0C0", "#000000"],
-      "sizes": ["39", "40", "41", "42", "43"]
+      "colors": [
+        "#C0C0C0",
+        "#000000"
+      ],
+      "sizes": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ]
     },
     {
       "id": "36",
@@ -134,8 +163,18 @@
         "name": "Shoes",
         "image": "https://i.imgur.com/qNOjJje.jpeg"
       },
-      "colors": ["#FFC0CB", "#FF0000", "#FFD700"],
-      "sizes": ["36", "37", "38", "39", "40"]
+      "colors": [
+        "#FFC0CB",
+        "#FF0000",
+        "#FFD700"
+      ],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ]
     },
     {
       "id": "37",
@@ -152,8 +191,16 @@
         "name": "Shoes",
         "image": "https://i.imgur.com/qNOjJje.jpeg"
       },
-      "colors": ["#1E90FF", "#000080"],
-      "sizes": ["36", "37", "38", "39"]
+      "colors": [
+        "#1E90FF",
+        "#000080"
+      ],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39"
+      ]
     },
     {
       "id": "38",
@@ -170,8 +217,18 @@
         "name": "Shoes",
         "image": "https://i.imgur.com/qNOjJje.jpeg"
       },
-      "colors": ["#FFA500", "#0000FF", "#FFFFFF"],
-      "sizes": ["40", "41", "42", "43", "44"]
+      "colors": [
+        "#FFA500",
+        "#0000FF",
+        "#FFFFFF"
+      ],
+      "sizes": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
     },
     {
       "id": "39",
@@ -188,7 +245,10 @@
         "name": "Jewellery",
         "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
       },
-      "colors": ["#C0C0C0", "#FFD700"]
+      "colors": [
+        "#C0C0C0",
+        "#FFD700"
+      ]
     },
     {
       "id": "40",
@@ -203,7 +263,9 @@
         "name": "Jewellery",
         "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
       },
-      "colors": ["#FFD700"]
+      "colors": [
+        "#FFD700"
+      ]
     },
     {
       "id": "41",
@@ -220,7 +282,10 @@
         "name": "Jewellery",
         "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
       },
-      "colors": ["#0000FF", "#C0C0C0"]
+      "colors": [
+        "#0000FF",
+        "#C0C0C0"
+      ]
     },
     {
       "id": "42",
@@ -237,7 +302,10 @@
         "name": "Jewellery",
         "image": "https://fsilverman.com/wp-content/uploads/2017/01/iStock-96332940-jewelry-box.jpg"
       },
-      "colors": ["#008000", "#FFD700"]
+      "colors": [
+        "#008000",
+        "#FFD700"
+      ]
     },
     {
       "id": "43",
@@ -252,7 +320,9 @@
         "name": "Miscellaneous",
         "image": "https://i.imgur.com/BG8J0Fj.jpg"
       },
-      "colors": ["#0000FF"]
+      "colors": [
+        "#0000FF"
+      ]
     },
     {
       "id": "44",
@@ -268,7 +338,10 @@
         "name": "Miscellaneous",
         "image": "https://i.imgur.com/BG8J0Fj.jpg"
       },
-      "colors": ["#C0C0C0", "#000000"]
+      "colors": [
+        "#C0C0C0",
+        "#000000"
+      ]
     },
     {
       "id": "45",
@@ -285,7 +358,10 @@
         "name": "Miscellaneous",
         "image": "https://i.imgur.com/BG8J0Fj.jpg"
       },
-      "colors": ["#FFA500", "#8B4513"]
+      "colors": [
+        "#FFA500",
+        "#8B4513"
+      ]
     },
     {
       "id": "46",
@@ -302,7 +378,11 @@
         "name": "Miscellaneous",
         "image": "https://i.imgur.com/BG8J0Fj.jpg"
       },
-      "colors": ["#FF0000", "#FFFFFF", "#000000"]
+      "colors": [
+        "#FF0000",
+        "#FFFFFF",
+        "#000000"
+      ]
     }
   ],
   "products": [
@@ -320,8 +400,16 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#808080", "#000000"],
-      "sizes": ["S", "M", "L", "XL"]
+      "colors": [
+        "#808080",
+        "#000000"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "8",
@@ -338,8 +426,17 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#FF0000", "#8B0000"],
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "colors": [
+        "#FF0000",
+        "#8B0000"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ]
     },
     {
       "id": "9",
@@ -356,8 +453,12 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#000080"],
-      "sizes": ["One Size"]
+      "colors": [
+        "#000080"
+      ],
+      "sizes": [
+        "One Size"
+      ]
     },
     {
       "id": "11",
@@ -374,8 +475,12 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#FF0000"],
-      "sizes": ["One Size"]
+      "colors": [
+        "#FF0000"
+      ],
+      "sizes": [
+        "One Size"
+      ]
     },
     {
       "id": "12",
@@ -392,8 +497,12 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#000000"],
-      "sizes": ["One Size"]
+      "colors": [
+        "#000000"
+      ],
+      "sizes": [
+        "One Size"
+      ]
     },
     {
       "id": "13",
@@ -409,8 +518,17 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#808000", "#F5F5DC"],
-      "sizes": ["30", "32", "34", "36", "38"]
+      "colors": [
+        "#808000",
+        "#F5F5DC"
+      ],
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ]
     },
     {
       "id": "14",
@@ -427,8 +545,16 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#000000", "#808080"],
-      "sizes": ["XS", "S", "M", "L"]
+      "colors": [
+        "#000000",
+        "#808080"
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
     },
     {
       "id": "15",
@@ -445,8 +571,15 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#FFFFFF"],
-      "sizes": ["S", "M", "L", "XL"]
+      "colors": [
+        "#FFFFFF"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "16",
@@ -463,8 +596,16 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#FFFFFF"],
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "colors": [
+        "#FFFFFF"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ]
     },
     {
       "id": "17",
@@ -481,8 +622,15 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/QkIa5tT.jpeg"
       },
-      "colors": ["#000000"],
-      "sizes": ["S", "M", "L", "XL"]
+      "colors": [
+        "#000000"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "18",
@@ -499,7 +647,11 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#FFFFFF", "#FFA500", "#000000"]
+      "colors": [
+        "#FFFFFF",
+        "#FFA500",
+        "#000000"
+      ]
     },
     {
       "id": "19",
@@ -516,7 +668,10 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#FFFFFF", "#000000"]
+      "colors": [
+        "#FFFFFF",
+        "#000000"
+      ]
     },
     {
       "id": "21",
@@ -533,7 +688,10 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#FFFFFF", "#C0C0C0"]
+      "colors": [
+        "#FFFFFF",
+        "#C0C0C0"
+      ]
     },
     {
       "id": "22",
@@ -550,7 +708,11 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#000000", "#0000FF", "#808080"]
+      "colors": [
+        "#000000",
+        "#0000FF",
+        "#808080"
+      ]
     },
     {
       "id": "23",
@@ -567,7 +729,10 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#000000", "#C0C0C0"]
+      "colors": [
+        "#000000",
+        "#C0C0C0"
+      ]
     },
     {
       "id": "24",
@@ -584,7 +749,10 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#C0C0C0", "#000000"]
+      "colors": [
+        "#C0C0C0",
+        "#000000"
+      ]
     },
     {
       "id": "25",
@@ -601,7 +769,11 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#FF0000", "#C0C0C0", "#000000"]
+      "colors": [
+        "#FF0000",
+        "#C0C0C0",
+        "#000000"
+      ]
     },
     {
       "id": "26",
@@ -618,7 +790,11 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#C0C0C0", "#FFD700", "#FFC0CB"]
+      "colors": [
+        "#C0C0C0",
+        "#FFD700",
+        "#FFC0CB"
+      ]
     },
     {
       "id": "27",
@@ -635,7 +811,11 @@
         "name": "Electronics",
         "image": "https://i.imgur.com/ZANVnHE.jpeg"
       },
-      "colors": ["#000000", "#0000FF", "#FF0000"]
+      "colors": [
+        "#000000",
+        "#0000FF",
+        "#FF0000"
+      ]
     },
     {
       "id": "28",
@@ -652,7 +832,10 @@
         "name": "nuevo",
         "image": "https://i.imgur.com/Qphac99.jpeg"
       },
-      "colors": ["#000000", "#8B4513"]
+      "colors": [
+        "#000000",
+        "#8B4513"
+      ]
     }
   ],
   "categories": [
@@ -689,20 +872,11 @@
   ],
   "cart": [
     {
-      "id": "29",
-      "title": "Mid-Century Modern Wooden Dining Table",
-      "image": "https://i.imgur.com/DMQHGA0.jpeg",
-      "price": 24,
-      "quantity": 2,
-      "color": "#f44336",
-      "size": "M"
-    },
-    {
       "id": "13",
       "title": "Classic Olive Chino Shorts",
       "image": "https://i.imgur.com/UsFIvYs.jpeg",
       "price": 84,
-      "quantity": 1,
+      "quantity": 3,
       "color": "#8bc",
       "size": "XL"
     },
@@ -711,9 +885,27 @@
       "title": "Classic Black T-Shirt",
       "image": "https://i.imgur.com/9DqEOV5.jpeg",
       "price": 35,
-      "quantity": 2,
+      "quantity": 4,
       "color": "#f44336",
       "size": "M"
+    },
+    {
+      "id": "11",
+      "title": "Classic Red Baseball Cap",
+      "image": "https://i.imgur.com/cBuLvBi.jpeg",
+      "price": 35,
+      "quantity": 3,
+      "color": "#FF0000",
+      "size": "One Size"
+    },
+    {
+      "id": "29",
+      "title": "Mid-Century Modern Wooden Dining Table",
+      "image": "https://i.imgur.com/DMQHGA0.jpeg",
+      "price": 24,
+      "quantity": 1,
+      "color": "#F5DEB3",
+      "size": "N/A"
     }
   ],
   "notifications": [

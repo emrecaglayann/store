@@ -4,16 +4,27 @@ import axios from 'axios';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Platform } from 'react-native';
 
+type Product = {
+  id: number;
+  title: string;
+  price: number;
+  images: string[];
+  category: { id: number | string };
+  // diğer alanlar varsa ekleyebilirsin
+};
+
+
 const CategoryProductsScreen = () => {
   const { id, name } = useLocalSearchParams();
-  const [products, setProducts] = useState([]);
+const [products, setProducts] = useState<(Product & { sourceType: string })[]>([]);
 
   useEffect(() => {
     getProductsByCategory();
   }, [id]);
 
   const getBaseUrl = () => {
-    if (Platform.OS === "android") return "http://10.0.2.2:8000";
+    if (Platform.OS === "android") 
+    return "http://192.168.1.6:8000";
     return "http://localhost:8000";
   };
 
@@ -23,28 +34,21 @@ const CategoryProductsScreen = () => {
         axios.get(`${getBaseUrl()}/products`),
         axios.get(`${getBaseUrl()}/saleProducts`),
       ]);
-
-      // --- DÜZELTME BURADA BAŞLIYOR ---
       
       // Normal ürünlere 'normal' etiketi yapıştırıyoruz (veya boş bırakabilirsin)
-      const normalProducts = prodRes.data.map(item => ({
+      const normalProducts = prodRes.data.map((item: Product) => ({
         ...item,
-        sourceType: 'normal' 
+        sourceType: 'normal'
       }));
 
-      // Sale ürünlerine 'sale' etiketi yapıştırıyoruz.
-      // Bu 'sale' kelimesi Detay sayfasındaki "productType === 'sale'" kontrolü için kritik.
-      const saleProducts = saleRes.data.map(item => ({
+      const saleProducts = saleRes.data.map((item: Product) => ({
         ...item,
         sourceType: 'sale'
       }));
 
-      // İki diziyi birleştir
+
       const allProducts = [...normalProducts, ...saleProducts];
 
-      // --- DÜZELTME BİTTİ ---
-
-      // ID'ye göre filtrele
       const filtered = allProducts.filter(
         (item) => item?.category?.id?.toString() === id?.toString()
       );
@@ -75,8 +79,6 @@ const CategoryProductsScreen = () => {
                   params: { 
                     id: String(item.id), 
                     name: item.title,
-                    // --- KRİTİK DÜZELTME ---
-                    // Detay sayfasına bu ürünün 'sale' mi yoksa 'normal' mi olduğunu söylüyoruz.
                     productType: item.sourceType 
                   },
                 })
