@@ -876,7 +876,7 @@
       "title": "Classic Olive Chino Shorts",
       "image": "https://i.imgur.com/UsFIvYs.jpeg",
       "price": 84,
-      "quantity": 3,
+      "quantity": 4,
       "color": "#8bc",
       "size": "XL"
     },
@@ -903,8 +903,17 @@
       "title": "Mid-Century Modern Wooden Dining Table",
       "image": "https://i.imgur.com/DMQHGA0.jpeg",
       "price": 24,
-      "quantity": 1,
+      "quantity": 2,
       "color": "#F5DEB3",
+      "size": "N/A"
+    },
+    {
+      "id": "30",
+      "title": "Elegant Golden-Base Stone Top Dining Table",
+      "image": "https://i.imgur.com/NWIJKUj.jpeg",
+      "price": 66,
+      "quantity": 2,
+      "color": "#FFD700",
       "size": "N/A"
     }
   ],

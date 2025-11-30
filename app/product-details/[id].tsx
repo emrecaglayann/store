@@ -21,8 +21,8 @@ const ProductDetails = () => {
   const getProductDetails = async () => {
     const URL =
       productType === "sale"
-        ? `http://192.168.1.6:8000/saleProducts/${id}`
-        : `http://192.168.1.6:8000/products/${id}`;
+        ? `http://10.0.2.2:8000/saleProducts/${id}`
+        : `http://10.0.2.2:8000/products/${id}`;
     
     try {
       const response = await axios.get<ProductType>(URL);
@@ -47,7 +47,7 @@ const ProductDetails = () => {
     try {
       const URL =
         Platform.OS === "android"
-          ? "http://192.168.1.6:8000/cart"
+          ? "http://10.0.2.2:8000/cart"
           : "http://localhost:8000/cart";
 
       const cartItem = {

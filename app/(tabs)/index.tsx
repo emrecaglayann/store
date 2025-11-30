@@ -26,10 +26,10 @@ const HomeScreen = (props: Props) => {
 
   // ✅ Base URL'i platforma göre ayarla
   const getBaseUrl = () => {
-    if (Platform.OS === "android") 
-    return "http://192.168.1.6:8000"; // Android
-    return "http://localhost:8000";  // iOS 
-
+     if (Platform.OS === 'android') {
+    return 'http://10.0.2.2:8000';
+    }
+    return 'http://localhost:8000';
   };
 
   useEffect(() => {
